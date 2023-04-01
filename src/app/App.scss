@@ -1,0 +1,23 @@
+@import '../scss/functions/px-to-rem.scss';
+@import '../scss/mixins/breakpoints.scss';
+@import '../scss/grid.scss';
+
+.app {
+  // display: flex;
+  // flex-direction: column;
+  /* width: 1920px; */
+  width: 100%;
+  height: toRem(2000);
+  // text-align: center;
+  margin: 0 auto;
+  background-color: yellow;
+
+  @include breakpoint-above(md) {
+    width: toRem(1280);
+  }
+
+}
+  .content {
+    height: 1500px;
+    background-color: blueviolet;
+  }
