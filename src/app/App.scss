@@ -3,8 +3,6 @@
 @import '../scss/grid.scss';
 
 .app {
-  // display: flex;
-  // flex-direction: column;
   /* width: 1920px; */
   width: 100%;
   height: toRem(2000);
@@ -16,8 +14,14 @@
     width: toRem(1280);
   }
 
-}
   .content {
     height: 1500px;
     background-color: blueviolet;
+
+      &--main {
+        background-color: red;
+      }
   }
+
+}
+  
