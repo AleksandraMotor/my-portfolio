@@ -3,25 +3,43 @@
 @import '../scss/grid.scss';
 
 .app {
+
+  
+// * {
+//   margin: 0;
+//   padding: 0;
+//   box-sizing: border-box;
+// }
   /* width: 1920px; */
   width: 100%;
-  height: toRem(2000);
+  height: 100%;
+  // height: toRem(1500);
   // text-align: center;
   margin: 0 auto;
-  background-color: yellow;
+  background-color: #0A192F;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 
   @include breakpoint-above(md) {
     width: toRem(1280);
   }
 
-  .content {
-    height: 1500px;
-    background-color: blueviolet;
-
-      &--main {
-        background-color: red;
-      }
+  &__banner {
+    height: toRem(150);
   }
 
+  &__main {
+    display: flex;
+
+    &__sidebar {
+      width: toRem(70);
+    }
+
+    &__content {
+      width: calc(100% - 70px);
+      padding: toRem(10);
+    }
+  }
 }
   

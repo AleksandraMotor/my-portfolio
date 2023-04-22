@@ -1,69 +1,94 @@
 @import '../../scss/functions/px-to-rem.scss';
 @import '../../scss/mixins/breakpoints.scss';
 
-.navbar {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    height: 3.5rem;
-    background-color: #000080;  
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.menuIconOpen {
-    display: flex;
-    justify-content: start;
-    font-size: 1.5rem;
-    margin-left: 2rem;
-    color: #ffffff;
-}
-
-.menuIconClose {
-    display: flex;
-    justify-content: end;
-    font-size: 1.5rem;
-    margin-top: 0.75rem;
-    margin-right: 1rem;
-    color: #ffffff;
-}
-
-.sidebarMenu {
-    width: 250px;
-    height: 100vh;
-    background-color: #000080;
-    position: fixed;
+.sidebar {
+    position: sticky;
     top: 0;
-    left: 0;
-    transition: 0.6s;
+    border-radius: toRem(8);
+    margin: toRem(10) toRem(0);
 
-    &--close {
-        left: -100%;
-    }
-}
 
-li.menuItems {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    width: 100%;
-    height: 90px;
-    padding: 1rem 0 1.25rem;
-
-    .menuItemLinks {
+    &__burger {
         display: flex;
+        justify-content: center;
         align-items: center;
-        padding: 0 2rem;
-        font-size: 20px;
-        text-decoration: none;
-        color: #ffffff;
-        &:hover {
-            background-color: #ffffff;
-            color: #000080;
-            width: 100%;
-            height: 45px;
-            text-align: center;
-            border-radius: 5px;
-            margin: 0 2rem;
+        height: toRem(70);
+        width: toRem(70);
+        border-radius: toRem(8);
+        color: #64FFDA;
+        font-size: toRem(25);
+        transition: border-radius 0.4s ease;
+        border: toRem(2) solid #64FFDA;
+
+        &--x {
+            border-radius: 50%;
+            transform: rotate(180deg);
+            transition: transform 0.5s linear;
+
         }
-    }  
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+    
+        &--close {
+            display: none;
+        }
+
+        li.menuItems {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+
+            .menuItemLinks {
+                display: flex;
+                justify-content: end;
+                align-items: center;
+                padding: toRem(10);
+                font-size: toRem(25);
+                text-decoration: none;
+                border: toRem(2) solid #64FFDA;
+                color: #000000;
+                border-radius: toRem(8);
+
+                span {
+                    display: none;
+                    margin-right: toRem(10);
+                    color: #CCD6F6;
+                }
+
+                &:hover, &:focus {
+                    border-bottom-left-radius: toRem(0);
+                    border-top-left-radius: toRem(0);
+
+                    span {
+                        display: flex;
+                    }
+                }
+
+                &__hexagon {
+                    width: 50px;
+                    height: calc(50px*1.1547);
+                    clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
+                    background: #64FFDA;
+                    display: flex;
+                    align-items: center;
+                    justify-items: center;
+
+                    svg {
+                        font-size: toRem(30);
+                        margin: auto;
+                    }
+                }
+            }
+        }
+    }
 }

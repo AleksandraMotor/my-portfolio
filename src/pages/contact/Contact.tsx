@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const 
-NotFoundText = styled.div`
+ContactText = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -10,10 +10,10 @@ NotFoundText = styled.div`
     height: 70vh;
 `
 
-const NotFound: React.FunctionComponent = () => {
+const Contact: React.FunctionComponent = () => {
     return (
-        <NotFoundText>Not Found</NotFoundText>
+        <ContactText>Contact</ContactText>
     )
 }
 
-export default NotFound;
+export default Contact;

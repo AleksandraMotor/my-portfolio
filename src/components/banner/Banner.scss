@@ -1,0 +1,11 @@
+@import '../../scss/functions/px-to-rem.scss';
+@import '../../scss/mixins/breakpoints.scss';
+
+.banner {
+    height: toRem(150);
+    width: 100%;
+    background-image: url(../../assets/img/irysy.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}

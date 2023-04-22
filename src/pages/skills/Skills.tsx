@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const HomeText = styled.div`
+const SkillsText = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -9,10 +9,10 @@ const HomeText = styled.div`
     height: 70vh;
 `
 
-const Home: React.FunctionComponent = () => {
+const Skills: React.FunctionComponent = () => {
     return (
-        <HomeText>Home</HomeText>
+        <SkillsText>Skills</SkillsText>
     )
 }
 
-export default Home;
+export default Skills;

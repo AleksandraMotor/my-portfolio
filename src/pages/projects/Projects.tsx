@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const 
-WidgetsText = styled.div`
+WorkText = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -10,10 +10,10 @@ WidgetsText = styled.div`
     height: 70vh;
 `
 
-const Widgets: React.FunctionComponent = () => {
+const Work: React.FunctionComponent = () => {
     return (
-        <WidgetsText>Widgets</WidgetsText>
+        <WorkText>Work</WorkText>
     )
 }
 
-export default Widgets;
+export default Work;

@@ -1,41 +1,46 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import * as FaIcons from 'react-icons/fa';
-// import styled from 'styled-components';
 import { SidebarData } from './SidebarData';
+import classNames from 'classnames';
 
 import './Sidebar.scss';
 
 const Sidebar: React.FunctionComponent = () => {
-    const [close, setClose] = useState(false);
+    const [close, setClose] = useState(true);
     const showSidebar = () => setClose(!close);
-    const showMenu = !close;
 
     return (
-        <>
-            <div className="navbar">
-                <Link className="menuIconOpen" to="#" onClick={showSidebar}>
-                    <FaIcons.FaBars />
-                </Link>
-            </div>
-            <div className={showMenu ? 'sidebarMenu sidebarMenu--close' : 'sidebarMenu'}>
-                <Link className="menuIconClose" to="#" onClick={showSidebar}>
-                    <FaIcons.FaTimes />
-                </Link>
-                <ul>
-                    {SidebarData.map((item, index) => {
-                        return (
-                            <li key={index} className="menuItems">
-                                <Link to={item.path} className="menuItemLinks">
-                                    {item.icon}
-                                    <span style={{marginLeft: '16px'}}>{item.title}</span>
-                                </Link>
-                            </li>
-                        )
-                    })}
-                </ul>
-            </div>
-       </>
+        <div className="sidebar">
+            <Link to="#" onClick={showSidebar}
+                className={classNames({
+                    'sidebar__burger': true,
+                    'sidebar__burger--x': !close
+                })}
+            >
+                    {close && (
+                        <FaIcons.FaBars />
+                    )}
+                    {!close && (
+                        <FaIcons.FaTimes />
+                    )}
+            </Link>
+            <ul className={classNames({
+                    'sidebar__list': true,
+                    'sidebar__list--close': close
+            })}>
+                {SidebarData.map((item, index) => {
+                            return (
+                                <li key={index} className="menuItems">
+                                    <Link to={item.path} className="menuItemLinks">
+                                        <span>{item.title}</span>
+                                        <div className="menuItemLinks__hexagon">{item.icon}</div>
+                                    </Link>
+                                </li>
+                            )
+                        })}
+            </ul>
+       </div>
    );
 };
 

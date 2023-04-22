@@ -1,0 +1,70 @@
+@import '../../scss/functions/px-to-rem.scss';
+@import '../../scss/mixins/breakpoints.scss';
+@import '../../scss/grid.scss';
+
+.home {
+    height: toRem(1000);
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+
+    &__main {
+        color: #CCD6F6;
+        font-size: toRem(25);
+        padding: toRem(15);
+        font-weight: 600;
+        text-align: center;
+        margin-top: toRem(20);
+
+        &--header {
+            color: #8892B0;
+
+            span {
+                color: #64FFDA;
+                font-size: toRem(30);
+                margin-left: toRem(8);
+            }
+        }
+    }
+
+    &__foto {
+        margin: toRem(20);
+    }
+}
+
+// .hex {
+//     margin-top: 30px;
+//     width: 104px;
+//     height: 60px;
+//     background-color: red;
+//     border-color: blueviolet;
+//     position: relative;
+//     display: inline-block;
+
+//     &::before {
+//         content: " ";
+//         width: 0; height: 0;
+//         border-bottom: 30px solid;
+//         border-color: inherit;
+//         border-left: 52px solid transparent;
+//         border-right: 52px solid transparent;
+//         position: absolute;
+//         top: -30px;
+//     }
+
+//     &::after {
+//         content: "";
+//         width: 0;
+//         position: absolute;
+//         bottom: -30px;
+//         border-top: 30px solid;
+//         border-color: inherit;
+//         border-left: 52px solid transparent;
+//         border-right: 52px solid transparent;
+//     }
+// }
+
+// .hex2 {
+//     color: #6C6;
+//     font-size: toRem(50);
+// }
