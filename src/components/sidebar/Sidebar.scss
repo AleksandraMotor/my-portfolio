@@ -1,18 +1,11 @@
 @import '../../scss/functions/px-to-rem.scss';
 @import '../../scss/mixins/breakpoints.scss';
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@import '../../scss/mixins/colors.scss';
 
 .sidebar {
     position: sticky;
     top: 0;
-    border-radius: toRem(8);
-    margin: toRem(10) toRem(0);
-
+    margin: toRem(10);
 
     &__burger {
         display: flex;
@@ -21,10 +14,10 @@
         height: toRem(70);
         width: toRem(70);
         border-radius: toRem(8);
-        color: #64FFDA;
+        color: $color_first;
         font-size: toRem(25);
         transition: border-radius 0.4s ease;
-        border: toRem(2) solid #64FFDA;
+        border: toRem(2) solid $color_first;
 
         &--x {
             border-radius: 50%;
@@ -42,20 +35,21 @@
             display: none;
         }
 
-        li.menuItems {
+        &__item {
             list-style: none;
             display: flex;
             align-items: center;
-            justify-content: start;
+            justify-content: flex-start;
+            margin-top: toRem(5);
 
-            .menuItemLinks {
+            &__link {
                 display: flex;
-                justify-content: end;
+                justify-content: flex-end;
                 align-items: center;
                 padding: toRem(10);
                 font-size: toRem(25);
                 text-decoration: none;
-                border: toRem(2) solid #64FFDA;
+                border: toRem(2) solid $color_first;
                 color: #000000;
                 border-radius: toRem(8);
 
@@ -78,7 +72,7 @@
                     width: 50px;
                     height: calc(50px*1.1547);
                     clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
-                    background: #64FFDA;
+                    background: $color_first;
                     display: flex;
                     align-items: center;
                     justify-items: center;

@@ -1,0 +1,23 @@
+@import '../../scss/functions/px-to-rem.scss';
+@import '../../scss/mixins/breakpoints.scss';
+@import '../../scss/mixins/colors.scss';
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+
+    font-size: toRem(60);
+    color: $color_first;
+
+    & > :hover {
+        color: $color_second;
+    }
+
+    &__item {
+        width: toRem(200);
+        height: toRem(200);
+        border: 2px solid $group2_light_blue;
+        margin: toRem(20);
+        padding: toRem(15);
+    }
+}

@@ -10,7 +10,7 @@
 
     &__main {
         color: #CCD6F6;
-        font-size: toRem(25);
+        font-size: toRem(30);
         padding: toRem(15);
         font-weight: 600;
         text-align: center;
@@ -25,10 +25,23 @@
                 margin-left: toRem(8);
             }
         }
+
+        &--text {
+            margin-top: toRem(50);
+            font-size: toRem(20);
+        }
     }
 
     &__foto {
         margin: toRem(20);
+        width: toRem(200);
+        height: toRem(250);
+
+        img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+        }
     }
 }
 

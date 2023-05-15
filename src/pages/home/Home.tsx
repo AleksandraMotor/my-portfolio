@@ -1,17 +1,7 @@
 import React from 'react';
-import portrait from '../../assets/img/portrait.png';
+import photo from '../../assets/img/photo.jpg';
 
 import './Home.scss';
-
-// import styled from 'styled-components';
-
-// const HomeText = styled.div`
-//     display: flex;
-//     // align-items: center;
-//     // justify-content: center;
-//     // font-size: 50px;
-//     // height: 70vh;
-// `
 
 const Home: React.FunctionComponent = () => {
     return (
@@ -23,19 +13,18 @@ const Home: React.FunctionComponent = () => {
                         Aleksandra Motor
                     </span>
                 </div>
-                <div className="home__main--text">
+                <div className="home__main--subtitle">
                     Frontend Developer
+                </div>
+                <div className="home__main--text">
+                    I make websites!
                 </div>
             </div>
             <div className="home__foto">
-                <img src={portrait}/>
+                <img src={photo} alt='Aleksandra Motor'/>
             </div>
         </div>
     )
 }
 
 export default Home;
-
-
-            {/* <span className="hex"></span>
-            <div className="hex2">&#x2B22;</div> */}

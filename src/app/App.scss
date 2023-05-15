@@ -1,6 +1,6 @@
 @import '../scss/functions/px-to-rem.scss';
 @import '../scss/mixins/breakpoints.scss';
-@import '../scss/grid.scss';
+@import '../scss/mixins/reset.scss';
 
 .app {
 
@@ -10,6 +10,7 @@
 //   padding: 0;
 //   box-sizing: border-box;
 // }
+
   /* width: 1920px; */
   width: 100%;
   height: 100%;
@@ -20,6 +21,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
+  font-family: "Stick No Bills", "arial", sans-serif;
 
   @include breakpoint-above(md) {
     width: toRem(1280);
@@ -33,11 +35,11 @@
     display: flex;
 
     &__sidebar {
-      width: toRem(70);
+      width: toRem(200);
     }
 
     &__content {
-      width: calc(100% - 70px);
+      width: calc(100% - 200px);
       padding: toRem(10);
     }
   }

@@ -1,0 +1,49 @@
+@import '../../../scss/functions/px-to-rem.scss';
+@import '../../../scss/mixins/breakpoints.scss';
+@import '../../../scss/mixins/colors.scss';
+
+.button-js {
+    height: 100%;
+    display: flex;
+    font-size: 0;
+    position: relative;
+
+    &__description {
+        font-size: toRem(30);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin: toRem(10) toRem(10) 0 toRem(10);
+        opacity: 0;
+
+        &--h {
+            line-height: toRem(50);
+            letter-spacing: toRem(8);
+            margin-left: toRem(60);
+            margin-top: toRem(5);
+        }
+
+        &--v {
+            writing-mode: vertical-lr;
+            text-orientation: upright;
+        }
+    }
+
+    &:hover &__description {
+        transition: 2s 0.5s;
+        opacity: 1;
+    }
+
+    &__icon {
+        position: absolute;
+        font-size: toRem(60);
+        top: calc(50% - 30px);
+        left: calc(50% - 30px);
+        transition: 1s;
+    }
+
+    &:hover &__icon {
+        top: 0;
+        left: 0;
+    }
+}

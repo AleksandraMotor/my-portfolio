@@ -10,10 +10,10 @@ WorkText = styled.div`
     height: 70vh;
 `
 
-const Work: React.FunctionComponent = () => {
+const Projects: React.FunctionComponent = () => {
     return (
         <WorkText>Work</WorkText>
     )
 }
 
-export default Work;
+export default Projects;

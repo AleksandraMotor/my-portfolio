@@ -31,10 +31,10 @@ const Sidebar: React.FunctionComponent = () => {
             })}>
                 {SidebarData.map((item, index) => {
                             return (
-                                <li key={index} className="menuItems">
-                                    <Link to={item.path} className="menuItemLinks">
+                                <li key={index} className="sidebar__list__item">
+                                    <Link to={item.path} className="sidebar__list__item__link">
                                         <span>{item.title}</span>
-                                        <div className="menuItemLinks__hexagon">{item.icon}</div>
+                                        <div className="sidebar__list__item__link__hexagon">{item.icon}</div>
                                     </Link>
                                 </li>
                             )
