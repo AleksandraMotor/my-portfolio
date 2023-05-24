@@ -22,11 +22,11 @@
         width: toRem(50);
         border-radius: toRem(8);
         color: $color_first;
-        font-size: toRem(25);
-        line-height: toRem(30);
+        font-size: toRem(30);
         transition: border-radius 0.4s ease;
         border: toRem(2) solid $color_first;
         padding: toRem(10);
+        margin-right: toRem(10);
 
         &--show-menu {
             border-radius: 50%;
@@ -34,9 +34,16 @@
             transition: transform 0.5s linear;
 
         }
+
+        &--desktop {
+            margin-right: toRem(0);
+            padding: toRem(10);
+            height: toRem(70);
+            width: toRem(70);
+        }
     }
 
     &__content {
-        width: calc(100% - 50px);
+        flex-grow: 1;
     }
 }

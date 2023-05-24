@@ -3,13 +3,10 @@
 @import '../../../../scss/mixins/variables.scss';
 
 .menu-m {
-    background-color: $light_grey;
     z-index: 3;
-
     height: 100%;
     display: flex;
-    justify-content: space-around;
-    gap: toRem(5);
+    gap: toRem(8);
 
     &__item {
         text-decoration: none;

@@ -32,7 +32,12 @@ const App: React.FunctionComponent = () => {
           >
             <Sidebar/>
           </div>
-          <div className='app__main__content'>
+          <div
+            className={classNames({
+              'app__main__content': true,
+              'app__main__content--desktop': isDesktop,
+            })}
+          >
             <Routes>
               <Route path='/' element={<Home />} />
               <Route path='/skills' element={<Skills />} />

@@ -22,7 +22,8 @@ const Sidebar: React.FunctionComponent = () => {
             <Link to="#" onClick={showSidebar}
                 className={classNames({
                     'sidebar__burger': true,
-                    'sidebar__burger--show-menu': showMenu
+                    'sidebar__burger--show-menu': showMenu,
+                    'sidebar__burger--desktop': isDesktop
                 })}
             >
                     {!showMenu && (
