@@ -1,10 +1,11 @@
 @import '../../scss/functions/px-to-rem.scss';
 @import '../../scss/mixins/breakpoints.scss';
-@import '../../scss/mixins/colors.scss';
+@import '../../scss/mixins/variables.scss';
 
 .skills {
     display: flex;
     flex-wrap: wrap;
+    font-family: 'Urbanist', sans-serif;
 
     font-size: toRem(60);
     color: $color_first;

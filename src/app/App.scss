@@ -1,47 +1,46 @@
 @import '../scss/functions/px-to-rem.scss';
 @import '../scss/mixins/breakpoints.scss';
-@import '../scss/mixins/reset.scss';
+@import '../scss/mixins/variables.scss';
 
 .app {
-
-  
-// * {
-//   margin: 0;
-//   padding: 0;
-//   box-sizing: border-box;
-// }
-
-  /* width: 1920px; */
   width: 100%;
   height: 100%;
-  // height: toRem(1500);
-  // text-align: center;
-  margin: 0 auto;
-  background-color: #0A192F;
   display: flex;
   flex-direction: column;
-  position: relative;
-  font-family: "Stick No Bills", "arial", sans-serif;
-
-  @include breakpoint-above(md) {
-    width: toRem(1280);
-  }
+  background-color: $bg_color;
+  margin: 0 auto;
+  font-family: $font_main;
 
   &__banner {
-    height: toRem(150);
+    height: toRem(100);
+    width: 100%;
   }
 
   &__main {
     display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    @include breakpoint-above(md) {
+      flex-direction: row;
+      margin: 0 auto;
+      width: toRem(1000);
+    }
 
     &__sidebar {
-      width: toRem(200);
-    }
+      height: toRem(100);
+      position: sticky;
+      top: toRem(100);
+      font-family: $font_menu;
 
-    &__content {
-      width: calc(100% - 200px);
-      padding: toRem(10);
-    }
+      &--desktop {
+        height: toRem(500);
+        width: toRem(200);
+      }
+    }      
+
+    // &__content {
+
+    // }
   }
 }
-  

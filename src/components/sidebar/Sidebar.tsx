@@ -1,45 +1,48 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import * as FaIcons from 'react-icons/fa';
-import { SidebarData } from './SidebarData';
 import classNames from 'classnames';
+import { isDesktop } from 'react-device-detect';
+import SidebarMobile from './components/sidebar-mobile/SidebarMobile';
+import SidebarDesktop from './components/sidebar-desktop/SidebarDesktop';
 
 import './Sidebar.scss';
 
 const Sidebar: React.FunctionComponent = () => {
-    const [close, setClose] = useState(true);
-    const showSidebar = () => setClose(!close);
+    const [showMenu, setshowMenu] = useState(false);
+    const showSidebar = () => setshowMenu(!showMenu);
 
     return (
-        <div className="sidebar">
+        <div
+            className={classNames({
+                'sidebar': true,
+                'sidebar--desktop': isDesktop
+            })}
+        >
             <Link to="#" onClick={showSidebar}
                 className={classNames({
                     'sidebar__burger': true,
-                    'sidebar__burger--x': !close
+                    'sidebar__burger--show-menu': showMenu
                 })}
             >
-                    {close && (
+                    {!showMenu && (
                         <FaIcons.FaBars />
                     )}
-                    {!close && (
+                    {showMenu && (
                         <FaIcons.FaTimes />
                     )}
             </Link>
-            <ul className={classNames({
-                    'sidebar__list': true,
-                    'sidebar__list--close': close
-            })}>
-                {SidebarData.map((item, index) => {
-                            return (
-                                <li key={index} className="sidebar__list__item">
-                                    <Link to={item.path} className="sidebar__list__item__link">
-                                        <span>{item.title}</span>
-                                        <div className="sidebar__list__item__link__hexagon">{item.icon}</div>
-                                    </Link>
-                                </li>
-                            )
-                        })}
-            </ul>
+            { showMenu && (
+                <div className='sidebar__content'>
+                    { !isDesktop && (
+                        <SidebarMobile/>
+                    )}
+                    { isDesktop && (
+                        <SidebarDesktop/>
+                    )}
+                </div>   
+            )}
+
        </div>
    );
 };

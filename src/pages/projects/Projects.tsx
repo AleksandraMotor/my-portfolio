@@ -1,18 +1,13 @@
 import React from 'react';
-import styled from 'styled-components';
+import Template from '../../components/templates/Template';
 
-const 
-WorkText = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 50px;
-    height: 70vh;
-`
+import './Projects.scss';
 
-const Projects: React.FunctionComponent = () => {
+const Projects: React.FC = () => {
     return (
-        <WorkText>Work</WorkText>
+        <div className='projects'>
+            <Template/>
+        </div>
     )
 }
 

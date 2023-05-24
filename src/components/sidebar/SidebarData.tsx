@@ -16,8 +16,8 @@ export const SidebarData = [
         icon: <GiIcons.GiSkills/>
     },
     {
-        title: 'Work',
-        path: '/work',
+        title: 'Projects',
+        path: '/projects',
         icon: <VscFileSubmodule/>
     },
     {
