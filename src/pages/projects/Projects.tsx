@@ -1,12 +1,31 @@
 import React from 'react';
-import Template from '../../components/templates/Template';
+import classNames from 'classnames';
+import { isDesktop } from 'react-device-detect';
+import Card from '../../components/templates/card/Card';
+import { ProjectsData } from './ProjectsData';
 
 import './Projects.scss';
 
 const Projects: React.FC = () => {
     return (
-        <div className='projects'>
-            <Template/>
+        <div
+            className={classNames({
+                'projects': true,
+                'projects--desktop': isDesktop,
+            })}
+        >
+            { ProjectsData.map((item, index) => {
+                return (
+                    <Card
+                    key={index}
+                    name={item.name}
+                    source={item.source}
+                    live_demo={item.live_demo}
+                    thumbnail={item.thumbnail}
+                    technologies={item.technologies}
+                    />
+                )
+            })}
         </div>
     )
 }

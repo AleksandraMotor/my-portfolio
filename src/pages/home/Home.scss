@@ -6,59 +6,156 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-        text-align: center;
-        color: $light_grey;
-        font-size: toRem(25);
-        line-height: toRem(35);
+    text-align: center;
+    color: $light_grey;
+    font-size: toRem(25);
+    line-height: toRem(40);
+    margin: toRem(0) toRem(10);
+    
+    @include breakpoint-above(xs) {
+        font-size: toRem(30);
+        line-height: toRem(45);
+    }
+
+    @include breakpoint-above(sm) {
+        font-size: toRem(35);
+        line-height: toRem(50);
+    }
+
+    @include breakpoint-above(md) {
+        font-size: toRem(30);
+        line-height: toRem(40);
+    }
 
     &__main {
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin: toRem(20);
+        justify-content: center;
 
         @include breakpoint-above(md) {
             flex-direction: row;
         }
 
         &__header {
+            margin: toRem(10);
+
+            @include breakpoint-above(md) {
+                margin: toRem(20);
+            }
+
            &__subtitle {
-                font-size: toRem(30);
-                line-height: toRem(50);
+                font-size: toRem(25);
                 color: $dark_grey;
 
+                @include breakpoint-above(sm) {
+                    font-size: toRem(30);
+                }
+
+                @include breakpoint-above(md) {
+                    font-size: toRem(35);
+                }
+
+                @include breakpoint-above(md) {
+                    font-size: toRem(20);
+                }
+
                 span {
+                    font-size: toRem(30);
+                    line-height: toRem(50);
                     color: $color_first;
+
+                    @include breakpoint-above(xs) {
+                        font-size: toRem(30);
+                        line-height: toRem(45);
+                    }
+
+                    @include breakpoint-above(sm) {
+                        font-size: toRem(35);
+                        line-height: toRem(50);
+                    }
+                    
+                    @include breakpoint-above(md) {
+                        font-size: toRem(30);
+                        line-height: toRem(40);
+                    }
                 }
             } 
         }
 
         &__foto {
-            margin: toRem(20);
-            width: toRem(200);
-            height: toRem(200);
-            background-color: $color_second;
+            position: relative;
+            margin: toRem(10);
+            min-width: toRem(150);
+            min-height: toRem(200);
+            border-radius: toRem(8);
+            box-shadow: inset 0px 0px 10px 2px $dark_grey;
+            background-image: url('../../assets/img/photo.jpg');
+            background-repeat: no-repeat, no-repeat;
+            background-size: cover;
+            background-position: center, center;
 
-            img {
-                max-height: 100%;
-                max-width: 100%;
-                object-fit: contain;
+            &::after {
+                position: absolute;
+                top: 0;
+                left: 0;
+                content: "";
+                width: 100%;
+                height: 100%;
+                background-color: $dark_grey;
+                opacity: 0.25;
+                border-radius: toRem(8);
+            }
+
+            @include breakpoint-above(md) {
+                margin: toRem(20);
             }
         }        
     }
 
     &__text {
-        margin: toRem(40);
-        line-height: toRem(30);
+        margin: toRem(10);
+        font-size: toRem(20);
+        line-height: toRem(35);
+
+        @include breakpoint-above(xs) {
+            font-size: toRem(25);
+            line-height: toRem(40);
+        }
+
+        @include breakpoint-above(sm) {
+            font-size: toRem(30);
+            line-height: toRem(45);
+        } 
+
+        @include breakpoint-above(md) {
+            font-size: toRem(20);
+            line-height: toRem(40);
+            margin: toRem(20);
+        }
     }
 
     &__graphic {
-        width: toRem(200);
-        height: toRem(100);
+        width: toRem(300);
+        height: toRem(150);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: toRem(10) auto;
+
+        @include breakpoint-above(xs) {
+            width: toRem(400);
+            height: toRem(200);
+        }
+
+        @include breakpoint-above(sm) {
+            width: toRem(550);
+            height: toRem(250);
+        }
 
         @include breakpoint-above(md) {
-            width: toRem(1000);
-            height: toRem(500);
+            width: toRem(800);
+            height: toRem(400);
         }
 
         img {

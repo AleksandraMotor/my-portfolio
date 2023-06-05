@@ -10,7 +10,6 @@
 
     &__item {
         text-decoration: none;
-        color: $color_first;
         height: 100%;
         width: toRem(50);
         display: flex;
@@ -20,11 +19,13 @@
         cursor: pointer;
         transition: all 0.5s;
         border-radius: toRem(8);
-        background: $bg_color;
-        border: toRem(2) solid $color_first;
+        background: $bg_color_light;
+        color: $color_first;
+        border: toRem(2) solid;
 
         &:hover {
             flex-grow: 1;
+            color: $color_second;
         }
 
         &__text {

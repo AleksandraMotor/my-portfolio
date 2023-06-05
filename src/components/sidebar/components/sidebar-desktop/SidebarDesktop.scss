@@ -12,7 +12,8 @@
         display: flex;
         align-items: center;
         text-decoration: none;
-        color: $color_second;
+        color: $color_first;
+        background: $bg_color_light;
         border: toRem(2) solid;
         border-radius: toRem(8);
         padding: toRem(8);
@@ -22,7 +23,7 @@
             width: toRem(50);
             height: calc(50px*1.1547);
             clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
-            background: $color_first;
+            background: $color_second;
             display: flex;
             align-items: center;
             justify-items: center;

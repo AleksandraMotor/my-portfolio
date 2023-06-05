@@ -1,0 +1,4 @@
+- dokończyć Skills
+- uzupełnić dane o projektach w Projects
+- react-carousel w Banner
+- formularz kontaktowy w Contact

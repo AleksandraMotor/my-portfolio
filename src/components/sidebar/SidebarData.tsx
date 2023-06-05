@@ -25,4 +25,4 @@ export const SidebarData = [
         path: '/contact',
         icon: <TbCategory2/>
     }
-]
+];

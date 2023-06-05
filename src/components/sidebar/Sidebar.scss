@@ -3,7 +3,7 @@
 @import '../../scss/mixins/variables.scss';
 
 .sidebar {
-    padding: toRem(5);
+    padding: toRem(5) toRem(10);
     height: toRem(100);
     width: 100%;
     display: flex;
@@ -19,20 +19,21 @@
         justify-content: center;
         align-items: center;
         height: toRem(50);
-        width: toRem(50);
-        border-radius: toRem(8);
-        color: $color_first;
+        width: toRem(50);        
         font-size: toRem(30);
         transition: border-radius 0.4s ease;
-        border: toRem(2) solid $color_first;
+        background: $bg_color_light;
+        color: $color_first;
+        border: toRem(2) solid;
+        border-radius: toRem(8);
         padding: toRem(10);
         margin-right: toRem(10);
 
         &--show-menu {
+            color: $color_second;
             border-radius: 50%;
             transform: rotate(180deg);
             transition: transform 0.5s linear;
-
         }
 
         &--desktop {
