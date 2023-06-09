@@ -12,7 +12,6 @@ const ButtonSass: React.FC = () => {
             <div className='button-sass__description'>
                 ass
             </div>
-                 
         </div>
     );
 };

@@ -3,8 +3,6 @@
 @import '../../../scss/mixins/variables.scss';
 
 .button-sass {
-    height: 100%;
-    width: 100%;
     display: flex;
     font-style: italic;
     position: relative;
@@ -31,6 +29,6 @@
     }
 
     &:hover &__icon {
-        left: toRem(15);
+        left: calc(50% - 65px);
     }
 }

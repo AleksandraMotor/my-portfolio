@@ -7,15 +7,14 @@
     justify-content: center;
     flex-wrap: wrap;
     font-family: 'Urbanist', sans-serif;
-
     font-size: toRem(60);
     color: $color_first;
 
-    & > :hover {
-        color: $color_second;
-    }
+    // & > :hover {
+    //     color: $color_second;
+    // }
 
-    &__item {
+    & > * {
         width: toRem(200);
         height: toRem(200);
         border: 2px solid $group2_light_blue;
