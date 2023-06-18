@@ -1,0 +1,21 @@
+@import '../../../scss/functions/px-to-rem.scss';
+@import '../../../scss/mixins/breakpoints.scss';
+@import '../../../scss/mixins/variables.scss';
+
+.button-html {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: toRem(0);
+    align-items: center;
+
+    &:hover &__description {
+        font-size: toRem(50);
+        transition: 1s;
+    }
+
+    &__icon {
+        font-size: toRem(60);
+    }
+}

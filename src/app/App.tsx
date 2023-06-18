@@ -1,26 +1,51 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from '../pages/home/Home';
+import Skills from '../pages/skills/Skills';
+import Projects from '../pages/projects/Projects';
 import Banner from '../components/banner/Banner';
-import Menu from '../components/menu/Menu';
+import Contact from '../pages/contact/Contact';
+import classNames from 'classnames';
+import { isDesktop } from 'react-device-detect';
+import Sidebar from '../components/sidebar/Sidebar';
 
 import './App.scss';
 
-const App: React.FC = () => {
+const App: React.FunctionComponent = () => {
   return (
     <div className="app">
-      <div className="row">
-        <div className="col col-12">
-          <Banner/>
-        </div>
+      <div className="app__banner">
+        <Banner/>
       </div>
-      <div className="row">
-        <div className="col col-3">
-          <Menu/>
-        </div>
-        <div className="col col-9">
-          <div className="content">
-          Content
+      <div 
+        className={classNames({
+          'app__main': true,
+          'app__main--desktop': isDesktop,
+        })}
+      >
+        <Router>
+          <div
+            className={classNames({
+              'app__main__sidebar': true,
+              'app__main__sidebar--desktop': isDesktop,
+            })}
+          >
+            <Sidebar/>
           </div>
-        </div>
+          <div
+            className={classNames({
+              'app__main__content': true,
+              'app__main__content--desktop': isDesktop,
+            })}
+          >
+            <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='/skills' element={<Skills />} />
+              <Route path='/projects' element={<Projects />} />    
+              <Route path='/contact' element={<Contact />} />            
+            </Routes>
+          </div>
+        </Router> 
       </div>
     </div>
   );

@@ -1,23 +1,57 @@
 @import '../scss/functions/px-to-rem.scss';
 @import '../scss/mixins/breakpoints.scss';
-@import '../scss/grid.scss';
+@import '../scss/mixins/variables.scss';
 
 .app {
-  // display: flex;
-  // flex-direction: column;
-  /* width: 1920px; */
   width: 100%;
-  height: toRem(2000);
-  // text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: $bg_color_light;
   margin: 0 auto;
-  background-color: yellow;
+  font-family: $font_main;
 
-  @include breakpoint-above(md) {
-    width: toRem(1280);
+  &__banner {
+    height: toRem(100);
+    width: 100%;
   }
 
+  &__main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: $bg_color;
+
+    &--desktop {
+      flex-direction: row;
+      margin: 0 auto;
+      width: toRem(1000);
+      box-shadow: 0px 0px 20px 0px $dark_grey;
+    }
+
+    &__sidebar {
+      position: fixed;
+      z-index: 5;
+      top: toRem(100);
+      height: toRem(100);
+      width: 100%;
+      font-family: $font_menu;
+
+      &--desktop {
+        height: toRem(500);
+        width: toRem(200); 
+      }
+    }      
+
+    &__content {
+      width: 100%;
+      min-height: 100vh;
+      padding-top: toRem(100);
+
+      &--desktop {
+        padding-left: toRem(80);
+        padding-top: toRem(20);
+      }
+    }
+  }
 }
-  .content {
-    height: 1500px;
-    background-color: blueviolet;
-  }

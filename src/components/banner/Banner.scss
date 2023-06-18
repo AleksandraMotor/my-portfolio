@@ -1,0 +1,25 @@
+@import '../../scss/functions/px-to-rem.scss';
+@import '../../scss/mixins/variables.scss';
+@import '../../scss/mixins/breakpoints.scss';
+
+.banner {
+    height: toRem(100);
+    width: 100%;
+    background-image: url(../../assets/img/banner.JPG);
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: slide 100s linear;
+        
+    // background-position: center;
+    // background-attachment: fixed;
+    // background-color: $dark_grey;
+}
+
+@keyframes slide {
+    from {
+        background-position: bottom left;
+    }
+    to {
+        background-position: top right;
+    }
+}
