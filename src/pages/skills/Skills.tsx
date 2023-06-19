@@ -20,6 +20,7 @@ const Skills: React.FunctionComponent = () => {
             <ButtonGit/>
 
             <SiIcons.SiTypescript/>
+            <SiIcons.SiCss3/>
             <SiIcons.SiAngular/>
             <SiIcons.SiBootstrap/>
             <SiIcons.SiTailwindcss/>

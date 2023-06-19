@@ -11,10 +11,11 @@ interface CardProps {
     source?: string;
     live_demo?: string;
     thumbnail?: string;
-    technologies?: JSX.Element[]
+    technologies?: JSX.Element[];
+    description?: string;
 };
 
-const Card: React.FC<CardProps> = ({ name, source, live_demo, thumbnail, technologies }) => {
+const Card: React.FC<CardProps> = ({ name, source, live_demo, thumbnail, technologies, description }) => {
 
     const [reverse, setReverse] = useState(true);
 
@@ -64,7 +65,7 @@ const Card: React.FC<CardProps> = ({ name, source, live_demo, thumbnail, technol
                     })}
                 </div>
                 <div className='card__back__description'>
-                description
+                    {description}
                 </div>
             </div>
         </div>
