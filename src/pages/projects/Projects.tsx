@@ -23,6 +23,7 @@ const Projects: React.FC = () => {
                     live_demo={item.live_demo}
                     thumbnail={item.thumbnail}
                     technologies={item.technologies}
+                    description={item.description}
                     />
                 )
             })}
